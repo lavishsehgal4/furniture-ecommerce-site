@@ -5,9 +5,10 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const session = require("express-session"); // Import express-session
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/furnitureGallery", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -38,7 +39,7 @@ const {
 const allProducts = require("./data/allProducts");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const filePath = path.join(__dirname, "clients.json");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views")); // only if your views are in a /views folder
@@ -307,8 +308,8 @@ app.post("/subscribe", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "sehgallavish08@gmail.com", // your Gmail
-        pass: "fmoy xpjn pxhw yjmb", // App Password (not your real password)
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
       },
     });
 
