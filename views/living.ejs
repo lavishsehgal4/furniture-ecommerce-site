@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/living2.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style2.css" />
+    <link rel="stylesheet" href="/css/living.css" />
+  </head>
+  <body>
+    <div id="navbar">
+      <span class="nav_ele">
+        <div class="menu-container">
+          <div class="flyout-menu">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="menu-trigger">☰ MENU</div>
+        </div>
+      </span>
+
+      <span class="nav_ele">
+        <img src="/images/logo2.avif" alt="logo" />
+      </span>
+
+      <div id="search_eng">
+        <span class="nav_ele" id="hide">
+          <a href="#" id="button-link">FIND A STORE</a>
+        </span>
+        <span>
+          <a href="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </span>
+        <span>
+          <a href="wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+        </span>
+        <span>
+          <a href="login"> <i class="fa-solid fa-user-plus"></i> </a
+        ></span>
+        <span>
+          <a href="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <main>
+      <div id="litop">
+        <p>LIVING</p>
+      </div>
+      <hr />
+      <div id="useless"></div>
+      <div class="product-grid">
+        <% products.forEach(product => { %>
+        <div class="product-item">
+          <a href="/living/<%= product.id %>">
+            <img src="<%= product.image %>" alt="<%= product.name %>" />
+          </a>
+          <p class="tex"><%= product.name %></p>
+          <p class="price"><%= product.price %></p>
+        </div>
+        <% }); %>
+      </div>
+      <div id="lisofa">
+        <div id="conten">
+          <p>GET DISCOUNT 30% OFF ON ALL PRODUCTS</p>
+          <h1>Mordern</h1>
+          <h1>furniture</h1>
+          <h1>special offer</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry’s standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting
+          </p>
+        </div>
+      </div>
+      <h1 style="padding-top: 30px; text-align: center">
+        EXPLORE THE TRENDING
+      </h1>
+      <section>
+        <div class="product-grid">
+          <% trending.forEach(item => { %>
+          <div class="product-item">
+            <a href="/<%= item.category %>/<%= item.id %>">
+              <img src="<%= item.image %>" alt="<%= item.name %>" />
+            </a>
+            <p class="tex"><%= item.name %></p>
+            <p class="price"><%= item.price %></p>
+          </div>
+          <% }); %>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Living</a></li>
+            <li><a href="#">Dining</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Decor</a></li>
+            <li><a href="#">Last Chance</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Find a Store</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Furniture Stability</a></li>
+            <li><a href="#">Fact Sheet</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Warranty & Returns Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <i class="fas fa-clock"><img src="/images/clock.png" alt="" /></i>
+          <h4>Immediate Availability</h4>
+          <p>On select products</p>
+        </div>
+        <div class="footer-col">
+          <i class="fas fa-couch"><img src="/images/car.png" alt="" /></i>
+          <h4>Complimentary Interior Design</h4>
+          <p>When you shop in store</p>
+        </div>
+        <div class="footer-col">
+          <i class="fas fa-hand-paper"><img src="/images/hand.png" alt="" /></i>
+          <h4>White Glove Delivery</h4>
+          <p>Within Perth metro areas.</p>
+        </div>
+      </div>
+      <div class="app-stores">
+        <a href="https://play.google.com/store/games?device=windows"
+          ><img src="/images/google play.png" alt="Google Play"
+        /></a>
+        <a href="https://appstoreconnect.apple.com/"
+          ><img src="/images/applestore.png" alt="App Store"
+        /></a>
+      </div>
+
+      <div class="copyright">
+        &copy; THE FURNITURE GALLERY. ALL RIGHT RESERVED.
+      </div>
+      <p>
+        (08) 9444 1332 | enquiries@thefg.com.au | 415 Scarborough Beach Rd,
+        Osborne Park, WA, 6017
+      </p>
+
+      <a href="#" class="help-btn">HELP</a>
+      <a href="#" class="up-btn">↑</a>
+      <br />
+      <img src="/images/lastlogo.png" alt="zip" /><img
+        src="/images/afterpay.png"
+        alt=""
+      />
+      <img src="/images/hum.png" alt="photo" />
+    </footer>
+    <script src="/images/heart.js"></script>
+  </body>
+</html>

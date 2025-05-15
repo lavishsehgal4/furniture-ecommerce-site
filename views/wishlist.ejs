@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist - Furniture Gallery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Helvetica", sans-serif;
+        background: #ffffff; /* Clean white background */
+        min-height: 100vh;
+      }
+      .navbar {
+        background: #ffffff; /* White navbar to match the scheme */
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .navbar-title {
+        color: #000000; /* Black text for title */
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      .navbar-button {
+        color: #000000; /* Black text for button */
+        border: 1px solid #d1a894; /* Peach-toned border */
+        border-radius: 0;
+      }
+      .navbar-button:hover {
+        background: #d1a894; /* Peach background on hover */
+        color: #ffffff;
+      }
+      .empty-message {
+        animation: fadeIn 1s ease-in-out;
+      }
+      .empty-message h1 {
+        color: #000000; /* Black heading */
+        font-weight: 600;
+      }
+      .empty-message p {
+        color: #4b5563; /* Gray text */
+      }
+      .browse-button {
+        background: #d1a894; /* Black button */
+        color: #ffffff;
+        border-radius: 0;
+      }
+      .browse-button:hover {
+        background: #d1a894; /* Peach on hover */
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="flex flex-col">
+    <!-- Navbar -->
+    <nav class="navbar p-4 flex justify-between items-center">
+      <div class="navbar-title text-xl">Furniture Gallery</div>
+      <div>
+        <a href="/" class="navbar-button px-4 py-2 transition duration-300"
+          >Home</a
+        >
+      </div>
+    </nav>
+
+    <!-- Wishlist Content -->
+    <div class="flex-grow flex items-center justify-center">
+      <div class="text-center empty-message">
+        <h1 class="text-3xl mb-4">Your Wishlist</h1>
+        <p class="text-lg">Your wishlist is currently empty.</p>
+        <p class="text-md mt-2">
+          Explore our collection and add your favorite furniture pieces!
+        </p>
+        <a
+          href="shop"
+          class="browse-button mt-6 inline-block px-6 py-3 transition duration-300"
+          >Browse Gallery</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

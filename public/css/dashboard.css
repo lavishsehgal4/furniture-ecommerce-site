@@ -1,0 +1,46 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container box */
+.container {
+  max-width: 400px;
+  background: white;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section */
+.profile {
+  margin-top: 20px;
+}
+
+/* Circular profile photo */
+.photo-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 3px solid #007bff;
+}
+
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Email Text */
+p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}

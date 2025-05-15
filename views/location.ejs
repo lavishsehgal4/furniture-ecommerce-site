@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Gallery</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+        background-color: #333;
+        padding: 15px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar h1 {
+        font-size: 24px;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+      .split-container {
+        display: flex;
+        height: calc(100vh - 60px);
+      }
+      .left-half {
+        width: 50%;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .right-half {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        padding: 10px;
+      }
+      .right-div {
+        flex: 1;
+        background-color: #e0e0e0;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 20px;
+      }
+      #map {
+        height: 90%;
+        width: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Furniture Gallery</h1>
+      <a href="/">Home</a>
+    </nav>
+
+    <div class="split-container">
+      <div class="left-half">
+        <div id="map"></div>
+      </div>
+      <div class="right-half">
+        <div class="right-div">
+          <h2>OSBORNE PARK SHOWROOM</h2>
+          <p>📞 (08) 9444 1332 &nbsp;&nbsp; 📧 Email us</p>
+          <p>
+            415 Scarborough Beach Rd<br />Osborne Park, WA<br />Australia<br />6017
+          </p>
+          <p>
+            MON/TUES/WED/FRI: 9:00 am - 5:30 pm<br />
+            THURS: 9:00 am - 9:00 pm<br />
+            SAT: 9:00 am - 5:00 pm<br />
+            SUN: 11:00 am - 5:00 pm
+          </p>
+          <a
+            href="https://maps.google.com/?q=415 Scarborough Beach Rd, Osborne Park, WA"
+            target="_blank"
+            >View on Google Maps</a
+          >
+        </div>
+        <div class="right-div">
+          <h2>COCKBURN SHOWROOM</h2>
+          <p>📞 (08) 9417 4107 &nbsp;&nbsp; 📧 Email us</p>
+          <p>11/87 Armadale Rd<br />Jandakot, WA<br />Australia<br />6164</p>
+          <p>
+            MON/TUES/WED/FRI: 9:00 am - 5:30 pm<br />
+            THURS: 9:00 am - 6:00 pm<br />
+            SAT: 9:00 am - 5:00 pm<br />
+            SUN: 11:00 am - 5:00 pm
+          </p>
+          <a
+            href="https://maps.google.com/?q=11/87 Armadale Rd, Jandakot, WA"
+            target="_blank"
+            >View on Google Maps</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      const map = L.map("map").setView([-31.9505, 115.8605], 11); // General Perth area
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      // Showroom 1: Osborne Park
+      L.marker([-31.9095, 115.8111], {
+        icon: L.icon({
+          iconUrl: "https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png",
+        }),
+      })
+        .addTo(map)
+        .bindPopup("Osborne Park Showroom");
+
+      // Showroom 2: Cockburn
+      L.marker([-32.1192, 115.8654], {
+        icon: L.icon({
+          iconUrl: "https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png",
+        }),
+      })
+        .addTo(map)
+        .bindPopup("Cockburn Showroom");
+
+      // Get and display user's current location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            L.marker([lat, lon])
+              .addTo(map)
+              .bindPopup("Your Location")
+              .openPopup();
+          },
+          () => {
+            alert("Location access denied or unavailable.");
+          }
+        );
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    </script>
+  </body>
+</html>

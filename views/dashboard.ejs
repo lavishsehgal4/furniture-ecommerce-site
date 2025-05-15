@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background-color: #f4f4f4;
+      }
+      .dashboard {
+        background: white;
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: #ddd;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+      .logout-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="profile-pic">
+        <!-- Placeholder for profile image -->
+        <!-- You can replace this with <img src="<%= user.profileImage %>" /> if you add one -->
+        <img src="/images/default-profile.png" alt="" />
+      </div>
+      <h2>Welcome, <%= user.name %>!</h2>
+      <p>Email: <%= user.email %></p>
+      <p>Glad to have you back on our site.</p>
+
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+#navbar{
+    position: sticky; 
+    top: 0; 
+    border-bottom: .5px solid black;
+    box-shadow: 0 -.5px rgba(255, 255, 255, 0.25) inset;
+   
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    
+    padding: 10px;
+    
+}
+
+.menu-container {
+    position: relative; /* Keep this relative to the navbar */
+}
+
+.menu-trigger {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    
+    color: black;
+}
+
+.flyout-menu {
+    position: fixed; /* Position relative to the entire screen */
+    top: 0;
+    left: -200px; /* Start hidden off-screen */
+    width: 200px;
+    height: 100vh;
+    background-color: #444;
+    color: white;
+    transition: left 0.6s ease-in-out;
+}
+
+.flyout-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flyout-menu ul li {
+    padding: 15px;
+    border-bottom: 1px solid #555;
+}
+
+.flyout-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-container:hover .flyout-menu {
+    left: 0; /* Slide in from the left edge of the screen */
+}
+#search_eng{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search_eng span a i{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    padding: 40px 0;
+}
+#gap{
+    height: 100px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 22px;
+    color: #212129;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #212129;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #333;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    background-color: #555;
+}
+
+.container p a {
+    text-decoration: none;
+    color: #333;
+}
+
+.container p a:hover {
+    text-decoration: underline;
+}
+
+
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+@media (min-width: 1000px){
+    #background_img{
+        grid-template-rows: 98.8px 946.8px;
+    }
+
+    #navbar{
+        display: flex;
+        height: 62px;
+        padding: 18px 30px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #button-link{
+        display: inline-block;
+        width: 116.8px;
+        height: 24.75px;
+        color: #d5a07f; 
+        padding: 5px 12px;
+        margin: 6px 25px 0px 0px;
+        font-family: raleway, sans-serif;
+        font-size: 15px;
+        border: 2px solid  #d5a07f;
+        text-decoration: none;
+    }
+
+    .nav_ele img{
+        width: 200px;
+        height: 62px;
+    }
+
+    #search_eng{
+        width: 331.8px;
+    }
+
+    i{
+        width: 45px;
+        height: 38.09px;
+    }
+
+    #link_button {
+        width: 183.61px;
+        height: 48.8px;
+        font-family: sans-serif;
+        font-weight: lighter;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #link_button a {
+        color: black; /* Initial text color */
+        text-align: center;
+        text-decoration: none;
+        
+        padding: 14px 28px;
+       width: 100%;
+        display: inline-block;
+        background-image: linear-gradient(to right, white 50%, transparent 50%); 
+        background-size: 200% 100%; 
+        background-position: left bottom; 
+        border: .8px solid white; 
+        transition: background-position 0.5s ease, color 0.5s ease; 
+    }
+    
+    #link_button a:hover {
+        background-position: right bottom; 
+        color: white; 
+    }
+}
+

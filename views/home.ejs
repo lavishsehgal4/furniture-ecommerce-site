@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buy furniture</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="/css/modal.css">
+</head>
+<body>
+    <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <div class="container">
+            <div class="left-half">
+                <h1>DESIGN INSPIRATION</h1>
+                <p>Subscribe for exclusive offers, new releases, and stay ahead with the latest updates.</p>
+<input type="email" id="emailInput" placeholder="Email" class="p-2 border rounded" />
+<button onclick="subscribeEmail()" class="bg-indigo-600 text-white px-4 py-2 rounded ml-2">
+  JOIN THE FAMILY
+</button>            </div>
+            <div class="right-half">
+                
+            </div>  
+        </div>
+      </div>
+      <div class="overlay hidden"></div>
+  <script src="/js/modal.js"></script>
+    <header>    
+        <div id="background_img">
+            
+        <div id="navbar">
+            <span class="nav_ele">
+                <div class="menu-container">
+                    <div class="flyout-menu">
+                        <ul>
+                            <nav>
+                                <li ><div  id="cross"style=" display: inline-block;width:15px;font-size: 50px; cursor: pointer;">&times;
+                                </li>
+                            <li><a href="#background_img">Home</a></li>
+                            <li><a href="#content">What's New</a></li>
+                            <li><a href="living">Living</a></li>
+                            <li><a href="bedroom">Bedroom</a></li>
+                            <li><a href="dining">Dining</a></li>
+                            <li><a href="#footer-content">Contact Us</a></li>
+                        </ul></nav>
+                    </div>
+                    <div class="menu-trigger">☰ MENU</div>
+                </div>
+            </span>
+
+            <span class="nav_ele">
+                <img id="logoo" src="/images/logo1.avif" alt="logo">
+            </span>
+
+            <div id="search_eng">
+                <span class="nav_ele" id="hide" >
+                    <a href="location" id="button-link" style="line-height: 26px;">FIND A STORE</a>
+            </span>
+            <span>
+                <a href="search">
+                    <i class="fa-solid fa-magnifying-glass lo"></i>
+                </a>
+            </span>
+            <span>
+                <a href="wishlist">
+                    <i class="fa-regular fa-heart lo" id="heart"></i>
+                </a>
+            </span>
+            <span>
+                <a href="login" class="login">
+                    <i class="fa-solid fa-user-plus lo"></i>
+                </a></span>
+            <span>
+                <a href="cart">
+                    <i class="fa-solid fa-cart-shopping lo"></i>              
+                  </a>
+            </span>
+        </div>
+        </div>
+    
+        <div id="section_head">
+            <h3>YOUR DREAM LIVING ROOM STARTS HERE</h3>
+            <h2>STUNNING LOUNGES</h2>
+            <div id="link_button">
+                <a href="shop">SHOP  NOW</a>
+            </div>
+            
+        </div>
+        
+    </div>
+    </header>
+    
+    <script src="/js/header.js"></script>
+    <main>
+        <section>
+            <div style="height: 150px;">
+               <br> <h2 style="text-align: center; font-family: sans-serif; font-weight: 200; color: #212129;font-size: 30px;letter-spacing: 3px;">Welcome to the Furniture Gallery</h2>
+               <p style="text-align: center; color: #595959;font-size: 20px;letter-spacing: 2px;">Your one-stop shop for stylish furniture and decor, delivering the latest trends exclusively to Perth.</p>
+            </div>
+           
+            <div id="content">
+                <% categories.forEach(category => { %>
+                  <div class="in_content">
+                    <img src="<%= category.image %>" alt="<%= category.name %>">
+                    <div id="link_button" class="ddd">
+                      <a href="<%= category.link %>"><%= category.name.toUpperCase() %></a>
+                    </div>
+                  </div>
+                <% }); %>
+              </div>
+              
+        </div>
+        </section>
+        <section class="design-section">
+            <div class="text-content">
+                <h2>IMAGINE THE POTENTIAL OF YOUR INTERIOR</h2>
+                <p>The Furniture Gallery's mission is to help turn your dream interior into a reality. Our team of talented stylists share a passion to create beautiful spaces for you to call home. Because life is too short not to love where you live.</p>
+                <button onclick="window.location.href='/book'">BOOK A DESIGN CONSULT</button>
+            </div>
+            <div class="image-content">
+                <img width="100%" height="315" src="/images/video.jpg" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </section>
+        <section id="divv">
+            <div class="banner">
+                <h1>SHOP OUR WIDE SELECTION OF STYLISH FURNITURE</h1>
+                <p>Western Australian owned and operated. The Furniture Gallery is a family owned company with a focus on<br> quality craftsmanship and on-trend designs sourced from local and international brands. <br>Ready to discover the largest range of stylish and affordable bed, living and dining furniture in WA? <br>Visit one of our three furniture stores located in Osborne Park, Joondalup, and Cockburn.</p>
+            </div>
+        </section>
+
+        <section class="featured-products" id="featured-products">
+            <h2>BROWSE OUR FEATURED PRODUCTS</h2>
+            <h1>TRENDING PRODUCTS</h1>
+          
+            <div class="products-grid">
+              <% featuredProducts.forEach(product => { %>
+<div class="product-card">
+                  <a href="/feature/<%= product.id %>"><img src="<%= product.img %>" alt="<%= product.name %>"></a>
+                  <h3><%= product.name %></h3>
+                  <p class="price">
+                    <span class="current-price"><%= product.price %></span>
+                    <span class="original-price"><%= product.old %></span>
+                  </p>
+                </div>
+              <% }); %>
+            </div>
+          </section>
+          
+        
+    </main>
+
+
+    <footer>
+    
+       <div class="footer-content" id="footer-content">
+               <div class="footer-col">
+                
+                   <h4>Explore</h4>
+                   <ul>
+                       <li><a href="#">Living</a></li>
+                       <li><a href="#">Dining</a></li>
+                       <li><a href="#">Bedroom</a></li>
+                       <li><a href="#">Office</a></li>
+                       <li><a href="#">Decor</a></li>
+                       <li><a href="#">Last Chance</a></li>
+                       <li><a href="#">Blog</a></li>
+                   </ul>
+               </div>
+               <div class="footer-col">
+                   <h4>Services</h4>
+                   <ul>
+                       <li><a href="#">About</a></li>
+                       <li><a href="#">Find a Store</a></li>
+                       <li><a href="#">Careers</a></li>
+                       <li><a href="#">Furniture Stability</a></li>
+                       <li><a href="#">Fact Sheet</a></li>
+                   </ul>
+               </div>
+               <div class="footer-col">
+                   <h4>Support</h4>
+                   <ul>
+                       <li><a href="#">Warranty & Returns Policy</a></li>
+                       <li><a href="#">Privacy Policy</a></li>
+                       <li><a href="#">Terms & Conditions</a></li>
+                       <li><a href="#">Shipping Policy</a></li>
+                   </ul>
+               </div>
+               <div class="footer-col">
+                   <i class="fas fa-clock"><img src="/images/clock.png" alt=""></i>
+                   <h4>Immediate Availability</h4>
+                   <p>On select products</p>
+               </div>
+               <div class="footer-col">
+                   <i class="fas fa-couch"><img src="/images/car.png" alt=""></i>
+                   <h4>Complimentary Interior Design</h4>
+                   <p>When you shop in store</p>
+               </div>
+               <div class="footer-col">
+                   <i class="fas fa-hand-paper"><img src="/images/hand.png" alt=""></i>
+                   <h4>White Glove Delivery</h4>
+                   <p>Within Perth metro areas.</p>
+               </div>
+           </div>
+           <div class="app-stores">
+               <a href="https://play.google.com/store/games?device=windows"><img src="/images/google play.png" alt="Google Play"></a>
+               <a href="https://appstoreconnect.apple.com/"><img src="/images/applestore.png" alt="App Store"></a>
+           </div>
+   
+           <div class="copyright">
+               &copy; THE FURNITURE GALLERY. ALL RIGHT RESERVED.
+           </div>
+           <p>(08) 9444 1332 | enquiries@thefg.com.au | 415 Scarborough Beach Rd, Osborne Park, WA, 6017</p>
+   
+           <a href="#" class="help-btn">HELP</a>
+           <a href="#" class="up-btn">↑</a>
+   <br>
+           <img src="/images/lastlogo.png" alt="zip" ><img src="/images/afterpay.png" alt=""> <img src="/images/hum.png" alt="photo">
+</footer>
+<button class="arrow-button hiddee" onclick="scrollToSection()">
+    <div class="arrow"></div>
+</button>
+
+<!-- help button-->
+<div class="help-button"onclick="toggleHelpForm()">
+    <div class="help-icon">
+      <!-- You can replace this text with an actual icon -->
+      <img src="/images/TFG_logo_b19b0e6a-c39b-43ed-b140-574e0981c625.png" alt="Help Icon" width="24" height="24">
+    </div>
+    <span class="help-text">HELP</span>
+  </div>
+  <!--help form-->
+  <div class="help-form" id="helpForm">
+    <div class="help-header">
+      <h2>Ask us a question...</h2>
+      <span class="close-btn" onclick="toggleHelpForm()">×</span>
+    </div>
+    <form class="help-content" id="helpForm">
+  <label>Your Name *</label>
+  <input type="text" name="name" required>
+
+  <label>Email Address *</label>
+  <input type="email" name="email" required>
+
+  <label>Phone Number *</label>
+  <input type="text" name="phone" required>
+
+  <label>Post Code</label>
+  <input type="text" name="postcode">
+
+  <label>How can we help you? *</label>
+  <textarea name="message" required></textarea>
+
+  <div class="terms">
+    <input type="checkbox" id="agree" name="agree" required>
+    <label for="agree">Yes, I agree to the <a href="#">privacy terms</a> *</label>
+  </div>
+
+  <button type="submit">Send</button>
+</form>
+
+  </div>
+  <script  src="/js/help.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

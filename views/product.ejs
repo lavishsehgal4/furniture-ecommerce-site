@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= product.name %> - Furniture Gallery</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        background-color: #f8f8f8;
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .navbar h1 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .container {
+        display: flex;
+        height: calc(100vh - 60px);
+      }
+
+      .left-half,
+      .right-half {
+        width: 50%;
+        padding: 20px;
+      }
+
+      .left-half {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .left-half img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+
+      .right-half {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .right-half h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .right-half p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        color: #666;
+      }
+
+      .price {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #222;
+      }
+
+      .add-to-cart-btn {
+        padding: 10px 20px;
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .add-to-cart-btn:hover {
+        background-color: #e65b50;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <h1>Furniture Gallery</h1>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+      <!-- Left half for image -->
+      <div class="left-half">
+        <img
+          src="<%= product.image || product.img %>"
+          alt="<%= product.name %>"
+        />
+      </div>
+
+      <!-- Right half for details -->
+      <div class="right-half">
+        <h2><%= product.name %></h2>
+        <p>
+          <!-- prettier-ignore -->
+          <%= product.description ? product.description : "This furnitureitemcombines elegance with comfort, designed to enhance yourlivingspace." %>
+        </p>
+        <div class="price"><%= product.price %></div>
+        <button
+          class="add-to-cart-btn"
+          onclick='addToCart({
+    id: "<%= product.id %>",
+    category: "<%= product.category %>",
+    image: "<%= product.image || product.img %>",
+    name: "<%= product.name %>",
+    price: "<%= product.price %>",
+    description: `<%= product.description %>`
+  })'
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+    <script src="/js/cart.js"></script>
+  </body>
+</html>

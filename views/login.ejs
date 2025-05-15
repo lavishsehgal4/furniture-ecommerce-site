@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title || "Login Page" %></title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="navbar">
+      <span class="nav_ele">
+        <div class="menu-container">
+          <div class="flyout-menu">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="menu-trigger">☰ MENU</div>
+        </div>
+      </span>
+
+      <span class="nav_ele">
+        <img src="/images/logo2.avif" alt="logo" />
+      </span>
+
+      <div id="search_eng">
+        <span class="nav_ele">
+          <a href="location" id="button-link">FIND A STORE</a>
+        </span>
+        <span>
+          <a href="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </span>
+        <span>
+          <a href="wishlist"><i class="fa-regular fa-heart"></i></a>
+        </span>
+        <span>
+          <a href="login"><i class="fa-solid fa-user-plus"></i></a>
+        </span>
+        <span>
+          <a href="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </span>
+      </div>
+    </div>
+
+    <!-- Sign in -->
+    <main>
+      <div id="gap"></div>
+      <div class="container">
+        <h2>LOGIN TO CONTINUE</h2>
+        <p>Please enter your e-mail and password:</p>
+        <form action="/login" method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div class="forgot-password">
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit">LOGIN</button>
+        </form>
+        <p>Don't have an account? <a href="/CreateAccount">Create one</a></p>
+      </div>
+    </main>
+  </body>
+</html>

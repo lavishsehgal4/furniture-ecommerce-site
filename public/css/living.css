@@ -1,0 +1,58 @@
+.tex {
+  letter-spacing: 2.5px;
+}
+
+#navbar {
+  position: static;
+  top: 0;
+  border-bottom: 0.5px solid black;
+  box-shadow: 0 -0.5px rgba(255, 255, 255, 0.25) inset;
+}
+
+.menu-container {
+  position: relative; /* Keep this relative to the navbar */
+}
+
+.menu-trigger {
+  color: black;
+}
+
+#search_eng span a i {
+  color: black;
+}
+/* Product item container */
+.product-item {
+  position: relative; /* Set relative position for the heart button to position within this container */
+}
+
+/* Product image */
+
+/* Heart Button */
+.heart-btn {
+  position: absolute;
+  bottom: 10px; /* Position from the bottom of the image */
+  right: 10px; /* Position from the right of the image */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff6b6b; /* Heart color */
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.heart-btn:hover {
+  transform: scale(1.2); /* Enlarge the heart on hover */
+}
+
+/* Empty heart (default state) */
+.heart-icon {
+  font-size: 28px;
+  transition: color 0.3s ease;
+}
+
+/* Filled heart (after adding to cart) */
+.heart-btn.active .heart-icon {
+  color: #e74c3c; /* Filled heart color */
+  content: "\2665"; /* Unicode for filled heart (♥) */
+}
